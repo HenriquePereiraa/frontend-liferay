@@ -1,0 +1,12 @@
+{
+    "private": true,
+    "workspaces": {
+        "packages": [
+            "modules/charts-js",
+            "modules/dashboard"
+        ]
+    },
+    "dependencies": {
+        "@reduxjs/toolkit": "^2.2.8"
+    }
+}

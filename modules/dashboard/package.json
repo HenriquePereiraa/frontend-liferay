@@ -1,0 +1,25 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dashboard",
+  "dependencies": {
+    "@liferay/dxp-7.4": "*",
+    "@reduxjs/toolkit": "^2.2.8",
+    "charts-js": "1.0.0",
+    "react-redux": "^9.1.2"
+  },
+  "portlet": {
+    "com.liferay.portlet.display-category": "category.sample",
+    "com.liferay.portlet.header-portlet-css": "/css/styles.css",
+    "com.liferay.portlet.instanceable": true,
+    "javax.portlet.name": "dashboard",
+    "javax.portlet.security-role-ref": "power-user,user",
+    "javax.portlet.resource-bundle": "content.Language"
+  },
+  "scripts": {
+    "build": "liferay build",
+    "clean": "liferay clean",
+    "deploy": "liferay deploy"
+  }
+}

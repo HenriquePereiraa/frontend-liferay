@@ -1,0 +1,18 @@
+{
+	"create-jar": {
+		"output-dir": "dist",
+		"features": {
+			"js-extender": true,
+			"web-context": "/dashboard",
+			"localization": "features/localization/Language",
+			"configuration": "features/configuration.json"
+		}
+	},
+	"config": {
+		"imports": {
+			"charts-js": {
+				"/": ">=1.0.0"
+			}
+		}
+	}
+}
