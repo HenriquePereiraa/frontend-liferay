@@ -4,7 +4,8 @@
   "description": "Charts Js",
   "dependencies": {
     "@liferay/dxp-7.4": "*",
-    "recharts": "^2.12.7"
+    "recharts": "^2.12.7",
+    "babel-plugin-root-import": "^6.5.0"
   },
   "portlet": {
     "com.liferay.portlet.display-category": "category.sample",

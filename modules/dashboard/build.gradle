@@ -1,0 +1,46 @@
+apply plugin: 'java'
+// apply plugin: 'biz.aQute.bnd.builder'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "4.0.0"
+    compileOnly group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    // Outras dependências conforme necessário
+}
+
+// Tarefa para executar o Webpack
+task webpack(type: Exec) {
+    inputs.dir("src").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.file("webpack.config.js")
+    outputs.dir("dist")
+    outputs.cacheIf { true }
+
+    // Comando para executar o Webpack
+    commandLine "$projectDir/node_modules/.bin/webpack"
+}
+
+// Tarefa para iniciar o servidor de desenvolvimento Webpack
+task webpackServer(type: Exec, dependsOn: webpack) {
+    commandLine "$projectDir/node_modules/.bin/webpack-dev-server", "--config", "./webpack.config.js"
+}
+
+// Configurando a geração do JAR
+jar {
+    dependsOn webpack // Certifique-se de que o Webpack execute antes de empacotar
+    from('dist') {
+        // Mova os arquivos do diretório 'dist' para 'META-INF/resources' no .jar final
+        into('META-INF/resources')
+    }
+}
+
+// Configura o diretório de recursos para incluir arquivos no .jar
+sourceSets {
+    main {
+        resources {
+            srcDir 'dist'
+        }
+    }
+}

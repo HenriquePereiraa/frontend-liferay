@@ -5,9 +5,11 @@
   "description": "Dashboard",
   "dependencies": {
     "@liferay/dxp-7.4": "*",
-    "@reduxjs/toolkit": "^2.2.8",
+    "@reduxjs/toolkit": "^1.5.0",
     "charts-js": "1.0.0",
-    "react-redux": "^9.1.2"
+    "react-redux": "^7.0.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   },
   "portlet": {
     "com.liferay.portlet.display-category": "category.sample",
@@ -18,7 +20,7 @@
     "javax.portlet.resource-bundle": "content.Language"
   },
   "scripts": {
-    "build": "liferay build",
+    "build": "npx webpack",
     "clean": "liferay clean",
     "deploy": "liferay deploy"
   }

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { PieReChart, BarRechart } from 'charts-js'
+// import { PieReChart, BarRechart } from 'charts-js'
 // import { useDispatch } from 'react-redux'
 import { getChartDatas } from './redux/dataSlice';
 
@@ -59,7 +59,7 @@ export default function AppComponent() {
 	return (
 		<div>
 			<h1>PieReChart - Module dashboard</h1>
-			<PieReChart 
+			{/* <PieReChart 
 				data01={data01} 
 				data02={data02}
 			/>
@@ -70,7 +70,7 @@ export default function AppComponent() {
 				height={450}
 				showTooltip={false}
 				xAxis={{ dataKey: 'name', tickLine: false }}
-			/>
+			/> */}
 		</div>
 	);
 }

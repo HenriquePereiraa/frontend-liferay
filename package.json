@@ -5,8 +5,5 @@
             "modules/charts-js",
             "modules/dashboard"
         ]
-    },
-    "dependencies": {
-        "@reduxjs/toolkit": "^2.2.8"
     }
 }
